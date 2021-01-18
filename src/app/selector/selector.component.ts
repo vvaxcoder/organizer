@@ -7,10 +7,13 @@ import {DateService} from '../shared/date.service';
   styleUrls: ['./selector.component.scss']
 })
 export class SelectorComponent {
-  private dateService: DateService;
+  public dateService: DateService;
 
   constructor(private ds: DateService) {
     this.dateService = ds;
   }
 
+  go(dir: number): void {
+    this.dateService.changeMonth(dir);
+  }
 }
