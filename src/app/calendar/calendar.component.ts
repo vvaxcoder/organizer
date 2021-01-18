@@ -19,7 +19,7 @@ interface Week {
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent implements OnInit {
-  public calendar: Week[] | undefined;
+  public calendar: Week[];
 
   constructor(private ds: DateService) {}
 
@@ -50,5 +50,9 @@ export class CalendarComponent implements OnInit {
     }
 
     this.calendar = calendar;
+  }
+
+  select(day: moment.Moment): void {
+    this.ds.changeDate(day);
   }
 }
