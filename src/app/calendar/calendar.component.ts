@@ -19,9 +19,11 @@ interface Week {
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent implements OnInit {
-  public calendar: Week[];
+  public calendar: Week[] = [];
 
-  constructor(private ds: DateService) {}
+  constructor(private ds: DateService) {
+    this.calendar = [];
+  }
 
   ngOnInit(): void {
     this.ds.date.subscribe(this.generate.bind(this));
