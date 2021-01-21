@@ -1,6 +1,7 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as moment from 'moment';
-import {BehaviorSubject} from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Task } from './tasks.service';
 
 
 @Injectable({
